@@ -1,0 +1,134 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <EditText
+        android:id="@+id/etAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvAmount"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/tvAmount"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/tvAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/amount"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/tvCustom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/tvAmount"
+        android:layout_below="@+id/tvAmount"
+        android:layout_marginTop="20dp"
+        android:text="@string/custom"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <SeekBar
+        android:id="@+id/sbPercentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etAmount"
+        android:layout_alignRight="@+id/etAmount"
+        android:layout_alignTop="@+id/tvCustom"
+        android:progress="20" />
+
+    <TextView
+        android:id="@+id/tvTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/tvCustom"
+        android:layout_below="@+id/tvPercentage"
+        android:layout_marginTop="50dp"
+        android:text="@string/tip"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvTip"
+        android:layout_alignBottom="@+id/tvTip"
+        android:layout_alignLeft="@+id/sbPercentage"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/btnSave"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvResult"
+        android:layout_alignBottom="@+id/tvResult"
+        android:layout_alignRight="@+id/sbPercentage"
+        android:onClick="onAddPercentageItem"
+        android:text="@string/save" />
+
+    <ListView
+        android:id="@+id/lvPercentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvFavorites"
+        android:layout_marginTop="5dp" >
+    </ListView>
+
+    <TextView
+        android:id="@+id/tvFavorites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/tvTip"
+        android:layout_below="@+id/tvTip"
+        android:layout_marginTop="30dp"
+        android:text="@string/favorites"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/tvPercentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/etAmount"
+        android:layout_below="@+id/sbPercentage"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+    
+    <Button
+        android:id="@+id/btnTenPercent"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/sbPercentage"
+        android:layout_below="@+id/tvCustom"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:onClick="onCaculateTenPercent"
+        android:text="10%" />
+    
+    <Button
+        android:id="@+id/btnFifteenPercent"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btnTenPercent"
+        android:layout_toRightOf="@+id/btnTenPercent"
+        android:layout_marginLeft="10dp"
+        android:onClick="onCaculateFifteenPercent"
+        android:text="15%" />
+    
+    <Button
+        android:id="@+id/btnTwentyPercent"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btnTenPercent"
+        android:layout_toRightOf="@+id/btnFifteenPercent"
+        android:layout_marginLeft="10dp"
+        android:onClick="onCaculateTwentyPercent"
+        android:text="20%" />
+
+</RelativeLayout>
